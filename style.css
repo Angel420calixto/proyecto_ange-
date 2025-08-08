@@ -1,0 +1,400 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY GENERAL */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f3f4f8;
+    color: #333;
+}
+
+/* NAV ESTILOS DESKTOP */
+.nav {
+    background-color: #090808;
+    box-shadow: 0 4px 10px rgba(89, 9, 9, 0.905);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* LOGO */
+.nav__logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #f3f1f1;
+}
+
+/* LINKS DE NAVEGACIÓN */
+.nav__links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    transition: all 0.3s ease;
+}
+
+.nav__links li a {
+    text-decoration: none;
+    color: #f3f1f1;
+    font-weight: 500;
+    font-size: 16px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* ANIMACIÓN DE SUBRAYADO */
+.nav__links li a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background-color: #b8eef5;
+    transition: width 0.3s ease;
+}
+
+.nav__links li a:hover {
+    color: #f4f3f3;
+}
+
+.nav__links li a:hover::after {
+    width: 100%;
+}
+
+/* BOTÓN HAMBURGUESA */
+.nav__toggle {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    z-index: 1100;
+}
+
+/* RESPONSIVE: VERSIÓN MOBILE */
+@media (max-width: 768px) {
+    .nav {
+        flex-wrap: nowrap;
+        padding: 15px 20px;
+    }
+
+    /* Mostrar botón hamburguesa */
+    .nav__toggle {
+        display: block;
+        margin-left: auto;
+    }
+
+    /* Menú lateral oculto inicialmente */
+    .nav__links {
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 250px;
+        background-color: #fff;
+        padding-top: 80px;
+        padding-left: 20px;
+        gap: 25px;
+        transition: right 0.4s ease;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1050;
+    }
+
+    .nav__links li a {
+        font-size: 18px;
+    }
+
+    /* Mostrar el menú cuando tiene la clase active */
+    .nav__links.active {
+        right: 0;
+    }
+}
+
+/* Hero / Portada */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('/img/panquques.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Contenido del Hero */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+    animation: fadeInUp 1.5s ease-out;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    animation: fadeIn 2s ease-out;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    animation: fadeIn 2.5s ease-out;
+}
+
+.btn-hero {
+    padding: 0.75rem 2rem;
+    font-size: 1.2rem;
+    background-color: #ff5e57;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-hero:hover {
+    background-color: #ff3b30;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .hero {
+        height: 80vh;
+        background-position: center top;
+        background-size: contain; /* NUEVO: asegura que la imagen no se recorte */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .btn-hero {
+        font-size: 1rem;
+        padding: 0.6rem 1.5rem;
+    }
+}
+
+/* ==== CONTENEDOR DE CATEGORÍAS HORIZONTALES (Grid desde cualquier pantalla) ==== */
+.busca__contenedor {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+/* FLECHAS DESACTIVADAS */
+.categoria__flecha {
+    display: none;
+}
+
+main{
+    background-color: #fff;
+}
+/* CATEGORÍAS - SIEMPRE EN GRID (no cambia en mobile) */
+.busca__categorias {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 10px 20px 30px;
+    scroll-snap-type: none;
+    overflow: visible;
+}
+
+.busca__categoria {
+    text-align: center;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.busca__categoria:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.busca__categoria img {
+    width: 100%;
+    max-height: 280px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* ==== BANNER MOCA ==== */
+.banner-list-moca {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+    list-style: none;
+    padding: 0 20px;
+}
+
+.banner-item-moca:first-child,
+.banner-item-moca:nth-child(4) {
+    grid-row: span 2;
+    aspect-ratio: 3/2;
+    width: 100%;
+    height: 100%;
+}
+
+.imagen-derecha {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+.banner-item-moca {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.banner-item-moca:hover {
+    transform: scale(1.01);
+}
+
+.banner-item-moca a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.banner-item-moca .img-responsive {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    border-radius: 12px;
+}
+
+.banner-item-moca:hover .img-responsive {
+    transform: scale(1.05);
+}
+
+/* Texto sobre la imagen */
+.banner-inner {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+    color: #fff;
+    text-align: left;
+    transition: background 0.3s ease;
+    border-radius: 0 0 12px 12px;
+}
+
+.banner-inner h3,
+.banner-inner h4 {
+    margin: 0 0 5px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.banner-inner p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Botón Ver Más */
+.btn__link {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    backdrop-filter: blur(3px);
+}
+
+.btn__link:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+}
+
+/* ==== RESPONSIVE QUE CONSERVA EL DISEÑO (solo mejora espaciado) ==== */
+@media (max-width: 768px) {
+    .banner-inner h3,
+    .banner-inner h4 {
+        font-size: 16px;
+    }
+
+    .banner-inner p {
+        font-size: 12px;
+    }
+
+    .btn__link {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+}
