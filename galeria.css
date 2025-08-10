@@ -5,6 +5,304 @@
     --rosa-pastel: #f5b7b1;
 }
 
+.nav__links {
+    transition: right 0.4s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY GENERAL */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--rojo);
+    color: var(--rosa-pastel);
+}
+
+/* HEADER */
+
+/* NAV ESTILOS DESKTOP */
+.nav {
+    background-color: #090808;
+    box-shadow: 0 4px 10px rgba(89, 9, 9, 0.905);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* LOGO */
+.encabezado__logo--icono {
+    max-width: 50px;
+}
+
+/* LINKS DE NAVEGACIÓN */
+.nav__links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    transition: all 0.3s ease;
+}
+
+.nav__links li a {
+    text-decoration: none;
+    color: #f3f1f1;
+    font-weight: 500;
+    font-size: 16px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* ANIMACIÓN DE SUBRAYADO */
+.nav__links li a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background-color: #b8eef5;
+    transition: width 0.3s ease;
+}
+
+.nav__links li a:hover {
+    color: #f4f3f3;
+}
+
+.nav__links li a:hover::after {
+    width: 100%;
+}
+
+/* BOTÓN HAMBURGUESA */
+.nav__toggle {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    z-index: 1100;
+}
+
+/* RESPONSIVE: VERSIÓN MOBILE */
+@media (max-width: 768px) {
+    .nav {
+        flex-wrap: nowrap;
+        padding: 15px 20px;
+    }
+
+    /* Mostrar botón hamburguesa */
+    .nav__toggle {
+        display: block;
+        margin-left: auto;
+    }
+
+    /* Menú lateral oculto inicialmente */
+    .nav__links {
+        flex-direction: column;
+        position: fixed;
+        top: 60px;
+        /* espacio para header */
+        right: -100%;
+        height: calc(100vh - 60px);
+        width: 250px;
+        background-color: #070707;
+        padding-top: 80px;
+        padding-left: 20px;
+        gap: 25px;
+        transition: right 0.4s ease;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1050;
+    }
+
+    .nav__links li a {
+        font-size: 18px;
+    }
+
+    /* Mostrar el menú cuando tiene la clase active */
+    .nav__links.active {
+        right: 0;
+    }
+}
+
+/* Hero / Portada */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('img/panquques.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding-top: 60px;
+    /* espacio para header + nav sticky */
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Contenido del Hero */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+    animation: fadeInUp 1.5s ease-out;
+    padding: 0 20px;
+
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+
+    margin: 20px auto 0;
+
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    animation: fadeIn 2s ease-out;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    animation: fadeIn 2.5s ease-out;
+}
+
+.btn-hero {
+    padding: 0.75rem 2rem;
+    font-size: 1.2rem;
+    background-color: #ff5e57;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-hero:hover {
+    background-color: #ff3b30;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .hero {
+        height: calc(25vh + 60px);
+        padding-top: 60px;
+        background-position: center top;
+        background-size: contain;
+        box-sizing: border-box;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .btn-hero {
+        font-size: 1rem;
+        padding: 0.6rem 1.5rem;
+    }
+}
+
+.categoria__vermas {
+    display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #181f22, #17bec4);
+    /* degradado pastel vibrante */
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.categoria__vermas:hover {
+    background: linear-gradient(135deg, #06e1cf, #012d05);
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.categoria__vermas:active {
+    transform: scale(0.98);
+}
+
+.busca__header {
+    text-align: center;
+    margin: 40px 0;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .categoria__vermas {
+        font-size: 1rem;
+        padding: 12px 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .categoria__vermas {
+        font-size: 0.9rem;
+        padding: 10px 18px;
+    }
+}
 /* Estructura general para que el main no tape el footer */
 html, body {
     background-color: var(--crema);
