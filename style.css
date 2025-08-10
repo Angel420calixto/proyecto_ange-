@@ -12,7 +12,7 @@
 /* BODY GENERAL */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #d0d3e0;
+    background-color: var(--rojo);
     color: #333;
 }
 
@@ -428,7 +428,7 @@ main {
 /* --- PIE DE PÁGINA (FOOTER) --- */
 footer {
     text-align: center;
-    background: #161921b9;
+    background: var(--grafito);
     padding: 20px;
     margin-top: 40px;
     font-size: 0.9rem;
