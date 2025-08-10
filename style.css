@@ -4,6 +4,16 @@
     /* Caramelo / rojo suave */
     --grafito: #3E2A23;
     /* Marrón oscuro */
+    --marron-suave: #c49a6c;
+    --marron-oscuro: #5c3c2c;
+    --crema: #f8e3c5;
+    --rosa-pastel: #f5b7b1;
+    --marron-oscuro: #5c3c2c;
+
+}
+
+.nav__links {
+    transition: right 0.4s ease;
 }
 
 * {
@@ -16,7 +26,18 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--rojo);
-    color: #333;
+    color: var(--rosa-pastel);
+}
+
+/* HEADER */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--marron-oscuro);
+    color: white;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* NAV ESTILOS DESKTOP */
@@ -32,11 +53,11 @@ body {
     z-index: 1000;
 }
 
-
-/* 🔹 LOGO */
+/* LOGO */
 .encabezado__logo--icono {
-    max-width: 50px; /* Reduce tamaño del logo para evitar que ocupe mucho espacio */
+    max-width: 50px;
 }
+
 /* LINKS DE NAVEGACIÓN */
 .nav__links {
     list-style: none;
@@ -102,9 +123,10 @@ body {
     .nav__links {
         flex-direction: column;
         position: fixed;
-        top: 0;
+        top: 60px;
+        /* espacio para header */
         right: -100%;
-        height: 100vh;
+        height: calc(100vh - 60px);
         width: 250px;
         background-color: #070707;
         padding-top: 80px;
@@ -134,9 +156,15 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
     display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    justify-content: center;
+
+    padding-top: 60px;
+    /* espacio para header + nav sticky */
+    box-sizing: border-box;
     overflow: hidden;
 }
 
@@ -159,6 +187,16 @@ body {
     text-align: center;
     animation: fadeInUp 1.5s ease-out;
     padding: 0 20px;
+
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+
+    margin: 20px auto 0;
+
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
 .hero-content h1 {
@@ -216,10 +254,11 @@ body {
 /* Responsive para móviles */
 @media (max-width: 768px) {
     .hero {
-        height: 25vh;
+        height: calc(25vh + 60px);
+        padding-top: 60px;
         background-position: center top;
         background-size: contain;
-        /* NUEVO: asegura que la imagen no se recorte */
+        box-sizing: border-box;
     }
 
     .hero-content h1 {
@@ -239,21 +278,22 @@ body {
 .categoria__vermas {
     display: inline-block;
     padding: 14px 28px;
-    background: linear-gradient(135deg, #ffb347, #ff7e5f); /* degradado pastel vibrante */
+    background: linear-gradient(135deg, #181f22, #17bec4);
+    /* degradado pastel vibrante */
     color: white;
     font-size: 1.2rem;
     font-weight: 600;
     text-decoration: none;
     border-radius: 50px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease;
     text-align: center;
 }
 
 .categoria__vermas:hover {
-    background: linear-gradient(135deg, #ff7e5f, #ffb347);
+    background: linear-gradient(135deg, #06e1cf, #012d05);
     transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
 .categoria__vermas:active {
@@ -278,26 +318,6 @@ body {
         font-size: 0.9rem;
         padding: 10px 18px;
     }
-}
-
-/* ==== CONTENEDOR DE CATEGORÍAS HORIZONTALES (Grid desde cualquier pantalla) ==== */
-.busca__contenedor {
-    width: 100%;
-    overflow: hidden;
-    padding: 20px 0;
-}
-
-/* FLECHAS DESACTIVADAS */
-.categoria__flecha {
-    display: none;
-}
-
-main {
-    background-color: #11253ba8;
-    flex: 1;
-    /* Ocupa todo el espacio restante antes del footer */
-    padding: 20px;
-    /* Opcional para dar respiro al contenido */
 }
 
 /* CATEGORÍAS - SIEMPRE EN GRID (no cambia en mobile) */
@@ -480,20 +500,38 @@ main {
 footer {
     text-align: center;
     background: var(--grafito);
+    /* asegúrate que esta variable esté definida */
     padding: 20px;
     margin-top: 40px;
     font-size: 0.9rem;
     color: #f4eeee;
+    position: relative;
+    /* para que tenga contexto de apilamiento */
+    z-index: 10;
+    /* para no quedar tapado */
+    flex-shrink: 0;
+    /* no se reduzca en flex layouts */
 }
 
+/* Íconos sociales */
 .social-icon {
     margin: 0 10px;
     color: #130453;
     transition: color 0.3s;
+    cursor: pointer;
 }
 
 .social-icon:hover {
     color: #d21313;
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+    footer {
+        margin-top: 20px;
+        font-size: 0.85rem;
+        padding: 15px 10px;
+    }
 }
 
 /* --- BOTÓN DE WHATSAPP --- */
@@ -506,6 +544,9 @@ footer {
     border-radius: 50%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s;
+    cursor: pointer;
+    z-index: 1000;
+    /* que quede siempre visible */
 }
 
 .whatsapp:hover {
@@ -517,6 +558,7 @@ footer {
     width: 36px;
     height: 36px;
 }
+
 
 /* --- MEDIA QUERIES PARA RESPONSIVIDAD --- */
 @media screen and (max-width: 768px) {

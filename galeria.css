@@ -1,17 +1,51 @@
 :root {
-    --marron-suave: #c49a6c;     /* Marrón claro, estilo waffle */
-    --marron-oscuro: #5c3c2c;   /* Marrón chocolate */
-    --crema: #f8e3c5;           /* Color crema pastel */
-    --rosa-pastel: #f5b7b1;     /* Toque pastel */
+    --marron-suave: #c49a6c;
+    --marron-oscuro: #5c3c2c;
+    --crema: #f8e3c5;
+    --rosa-pastel: #f5b7b1;
 }
 
+/* Estructura general para que el main no tape el footer */
+html, body {
+    background-color: var(--crema);
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header siempre visible */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--marron-oscuro);
+    color: white;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Main ocupa todo el espacio disponible sin tapar footer */
+main {
+    flex: 1;
+    background-color: #010509a8;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+/* Galería */
 .galeria {
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px 20px;
     text-align: center;
-    background-color: var(--crema);
+    background-color: #f7f5f5f6;
     border-radius: 10px;
+    position: sticky;
+    top: 60px; /* deja espacio para el header */
+    z-index: 10;
 }
 
 .galeria h2 {
@@ -22,11 +56,8 @@
 
 .galeria-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Siempre 3 columnas */
+    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
-    overflow: hidden;
-    max-height: calc((33vw * 4) + (15px * 3)); /* Altura para 4 filas exactas */
-    transition: max-height 0.5s ease;
 }
 
 .galeria-item {
@@ -34,16 +65,20 @@
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    aspect-ratio: 1 / 1; /* Mantener cuadrado */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .galeria-item img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover; /* Ajustar imagen sin huecos */
     display: block;
-    object-fit: cover;
 }
 
-/* Botón Ver Más */
+/* Botón "Ver más" */
 .btn-vermas {
     margin-top: 20px;
     padding: 10px 25px;
@@ -61,13 +96,96 @@
     transform: scale(1.05);
 }
 
-.galeria-expandida {
-    max-height: 2000px; /* Permitir mostrar todas */
+/* Modal para imagen */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
 }
 
-/* Para que en móvil siga viéndose 3 columnas y 4 filas */
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+.modal-nav {
+    position: absolute;
+    top: 50%;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    padding: 10px;
+}
+
+.modal-prev { left: 20px; }
+.modal-next { right: 20px; }
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Siempre 3 columnas, incluso en móvil */
 @media (max-width: 768px) {
     .galeria-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+footer {
+    position: relative; /* o fixed, pero relative es mejor para footer fijo abajo */
+    z-index: 100;
+    position: relative; /* o fixed, pero relative es mejor para footer fijo abajo */
+    z-index: 100;
+}
+footer {
+    text-align: center;
+    background: var(--grafito);
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #f4eeee;
+}
+
+.social-icon {
+    margin: 0 10px;
+    color: #130453;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #d21313;
+}
+
+/* --- BOTÓN DE WHATSAPP --- */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.whatsapp:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp svg {
+    fill: white;
+    width: 36px;
+    height: 36px;
+}
+
+
