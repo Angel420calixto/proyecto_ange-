@@ -1,4 +1,8 @@
 /* RESET */
+:root {
+    --rojo: #D99150;     /* Caramelo / rojo suave */
+    --grafito: #3E2A23;  /* Marrón oscuro */
+}
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +12,7 @@
 /* BODY GENERAL */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f3f4f8;
+    background-color: #d0d3e0;
     color: #333;
 }
 
@@ -211,7 +215,7 @@ body {
 /* Responsive para móviles */
 @media (max-width: 768px) {
     .hero {
-        height: 80vh;
+        height: 25vh;
         background-position: center top;
         background-size: contain;
         /* NUEVO: asegura que la imagen no se recorte */
@@ -244,9 +248,10 @@ body {
 }
 
 main {
-    background-color: #fff;
+    background-color: #11253ba8;
+    flex: 1; /* Ocupa todo el espacio restante antes del footer */
+    padding: 20px; /* Opcional para dar respiro al contenido */
 }
-
 /* CATEGORÍAS - SIEMPRE EN GRID (no cambia en mobile) */
 .busca__categorias {
     display: grid;
@@ -400,4 +405,159 @@ main {
         font-size: 12px;
         padding: 5px 10px;
     }
+
 }
+@media (max-width: 768px) {
+
+    .banner-inner h3,
+    .banner-inner h4 {
+        font-size: 16px;
+    }
+
+    .banner-inner p {
+        font-size: 12px;
+    }
+
+    .btn__link {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+
+} /* ← Esta llave cierra correctamente la media query */
+
+/* --- PIE DE PÁGINA (FOOTER) --- */
+footer {
+    text-align: center;
+    background: #161921b9;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #f4eeee;
+}
+
+.social-icon {
+    margin: 0 10px;
+    color: #130453;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #d21313;
+}
+
+/* --- BOTÓN DE WHATSAPP --- */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.whatsapp:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp svg {
+    fill: white;
+    width: 36px;
+    height: 36px;
+}
+
+/* --- MEDIA QUERIES PARA RESPONSIVIDAD --- */
+@media screen and (max-width: 768px) {
+    .encabezado {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .encabezado__navegacion {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .busca__titulo h1 {
+        font-size: 1.8rem;
+    }
+
+@media screen and (max-width: 480px) {
+    .busca__titulo h1 {
+        font-size: 1.5rem;
+    }
+
+    .busca__verdetalles {
+        font-size: 0.9rem;
+    }
+}
+}
+
+/* VARIABLES DE COLOR */
+
+/* CONTENEDOR DEL TÍTULO */
+.pago__titulo {
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+/* TEXTO PRINCIPAL */
+.pago__titulo--texto {
+    color: var(--grafito);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+/* SUBRAYADO CON ANIMACIÓN */
+.pago__titulo--subrayado {
+    width: 0;
+    height: 4px;
+    background: var(--rojo);
+    margin: 16px auto 0;
+    border-radius: 2px;
+    animation: expandUnderline 0.8s ease-out forwards;
+}
+
+/* KEYFRAMES DE ANIMACIÓN */
+@keyframes expandUnderline {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    to {
+        width: 180px;
+        opacity: 1;
+    }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .pago__titulo--texto {
+        font-size: 26px;
+    }
+    .pago__titulo--subrayado {
+        animation: expandUnderlineTablet 0.8s ease-out forwards;
+    }
+    @keyframes expandUnderlineTablet {
+        from { width: 0; opacity: 0; }
+        to { width: 140px; opacity: 1; }
+    }
+}
+
+@media (max-width: 480px) {
+    .pago__titulo--texto {
+        font-size: 22px;
+    }
+    .pago__titulo--subrayado {
+        animation: expandUnderlineMobile 0.8s ease-out forwards;
+    }
+    @keyframes expandUnderlineMobile {
+        from { width: 0; opacity: 0; }
+        to { width: 100px; opacity: 1; }
+    }
+}
+
