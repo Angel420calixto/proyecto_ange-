@@ -32,13 +32,11 @@ body {
     z-index: 1000;
 }
 
-/* LOGO */
-.nav__logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #f3f1f1;
-}
 
+/* 🔹 LOGO */
+.encabezado__logo--icono {
+    max-width: 50px; /* Reduce tamaño del logo para evitar que ocupe mucho espacio */
+}
 /* LINKS DE NAVEGACIÓN */
 .nav__links {
     list-style: none;

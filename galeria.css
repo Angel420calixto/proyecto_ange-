@@ -1,0 +1,73 @@
+:root {
+    --marron-suave: #c49a6c;     /* Marrón claro, estilo waffle */
+    --marron-oscuro: #5c3c2c;   /* Marrón chocolate */
+    --crema: #f8e3c5;           /* Color crema pastel */
+    --rosa-pastel: #f5b7b1;     /* Toque pastel */
+}
+
+.galeria {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+    background-color: var(--crema);
+    border-radius: 10px;
+}
+
+.galeria h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--marron-oscuro);
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Siempre 3 columnas */
+    gap: 15px;
+    overflow: hidden;
+    max-height: calc((33vw * 4) + (15px * 3)); /* Altura para 4 filas exactas */
+    transition: max-height 0.5s ease;
+}
+
+.galeria-item {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.galeria-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Botón Ver Más */
+.btn-vermas {
+    margin-top: 20px;
+    padding: 10px 25px;
+    font-size: 1rem;
+    color: white;
+    background-color: var(--marron-suave);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-vermas:hover {
+    background-color: var(--marron-oscuro);
+    transform: scale(1.05);
+}
+
+.galeria-expandida {
+    max-height: 2000px; /* Permitir mostrar todas */
+}
+
+/* Para que en móvil siga viéndose 3 columnas y 4 filas */
+@media (max-width: 768px) {
+    .galeria-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
