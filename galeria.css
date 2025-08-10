@@ -23,6 +23,16 @@ body {
 }
 
 /* HEADER */
+/* Header siempre visible */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--marron-oscuro);
+    color: white;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
 
 /* NAV ESTILOS DESKTOP */
 .nav {
@@ -303,8 +313,10 @@ body {
         padding: 10px 18px;
     }
 }
+
 /* Estructura general para que el main no tape el footer */
-html, body {
+html,
+body {
     background-color: var(--crema);
     margin: 0;
     padding: 0;
@@ -313,16 +325,7 @@ html, body {
     flex-direction: column;
 }
 
-/* Header siempre visible */
-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background-color: var(--marron-oscuro);
-    color: white;
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
+
 
 /* Main ocupa todo el espacio disponible sin tapar footer */
 main {
@@ -341,8 +344,10 @@ main {
     text-align: center;
     background-color: #f7f5f5f6;
     border-radius: 10px;
-    position: sticky;
-    top: 60px; /* deja espacio para el header */
+    /* position: sticky; */
+    /* QUITADO */
+    /* top: 60px; */
+    /* QUITADO */
     z-index: 10;
 }
 
@@ -363,7 +368,8 @@ main {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    aspect-ratio: 1 / 1; /* Mantener cuadrado */
+    aspect-ratio: 1 / 1;
+    /* Mantener cuadrado */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -372,7 +378,8 @@ main {
 .galeria-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ajustar imagen sin huecos */
+    object-fit: cover;
+    /* Ajustar imagen sin huecos */
     display: block;
 }
 
@@ -399,7 +406,7 @@ main {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, 0.8);
     justify-content: center;
     align-items: center;
     z-index: 999;
@@ -421,8 +428,13 @@ main {
     padding: 10px;
 }
 
-.modal-prev { left: 20px; }
-.modal-next { right: 20px; }
+.modal-prev {
+    left: 20px;
+}
+
+.modal-next {
+    right: 20px;
+}
 
 .modal-close {
     position: absolute;
@@ -439,19 +451,29 @@ main {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
 footer {
-    position: relative; /* o fixed, pero relative es mejor para footer fijo abajo */
+    position: relative;
+    /* o fixed, pero relative es mejor para footer fijo abajo */
     z-index: 100;
-    position: relative; /* o fixed, pero relative es mejor para footer fijo abajo */
+    position: relative;
+    /* o fixed, pero relative es mejor para footer fijo abajo */
     z-index: 100;
-}
-footer {
     text-align: center;
-    background: var(--grafito);
+    background-color: var(--marron-suave);
     padding: 20px;
     margin-top: 40px;
-    font-size: 0.9rem;
-    color: #f4eeee;
+    font-size: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+footer p {
+    color: #0b0b0b;
+    /* Tonos cálidos y amigables */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
 
 .social-icon {
@@ -485,5 +507,3 @@ footer {
     width: 36px;
     height: 36px;
 }
-
-
