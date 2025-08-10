@@ -238,6 +238,50 @@ body {
     }
 }
 
+.categoria__vermas {
+    display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #ffb347, #ff7e5f); /* degradado pastel vibrante */
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.categoria__vermas:hover {
+    background: linear-gradient(135deg, #ff7e5f, #ffb347);
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+.categoria__vermas:active {
+    transform: scale(0.98);
+}
+
+.busca__header {
+    text-align: center;
+    margin: 40px 0;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .categoria__vermas {
+        font-size: 1rem;
+        padding: 12px 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .categoria__vermas {
+        font-size: 0.9rem;
+        padding: 10px 18px;
+    }
+}
+
 /* ==== CONTENEDOR DE CATEGORÍAS HORIZONTALES (Grid desde cualquier pantalla) ==== */
 .busca__contenedor {
     width: 100%;
