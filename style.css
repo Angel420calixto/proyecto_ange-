@@ -1,8 +1,11 @@
 /* RESET */
 :root {
-    --rojo: #D99150;     /* Caramelo / rojo suave */
-    --grafito: #3E2A23;  /* Marrón oscuro */
+    --rojo: #D99150;
+    /* Caramelo / rojo suave */
+    --grafito: #3E2A23;
+    /* Marrón oscuro */
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -249,9 +252,12 @@ body {
 
 main {
     background-color: #11253ba8;
-    flex: 1; /* Ocupa todo el espacio restante antes del footer */
-    padding: 20px; /* Opcional para dar respiro al contenido */
+    flex: 1;
+    /* Ocupa todo el espacio restante antes del footer */
+    padding: 20px;
+    /* Opcional para dar respiro al contenido */
 }
+
 /* CATEGORÍAS - SIEMPRE EN GRID (no cambia en mobile) */
 .busca__categorias {
     display: grid;
@@ -407,6 +413,7 @@ main {
     }
 
 }
+
 @media (max-width: 768px) {
 
     .banner-inner h3,
@@ -423,7 +430,9 @@ main {
         padding: 5px 10px;
     }
 
-} /* ← Esta llave cierra correctamente la media query */
+}
+
+/* ← Esta llave cierra correctamente la media query */
 
 /* --- PIE DE PÁGINA (FOOTER) --- */
 footer {
@@ -484,15 +493,15 @@ footer {
         font-size: 1.8rem;
     }
 
-@media screen and (max-width: 480px) {
-    .busca__titulo h1 {
-        font-size: 1.5rem;
-    }
+    @media screen and (max-width: 480px) {
+        .busca__titulo h1 {
+            font-size: 1.5rem;
+        }
 
-    .busca__verdetalles {
-        font-size: 0.9rem;
+        .busca__verdetalles {
+            font-size: 0.9rem;
+        }
     }
-}
 }
 
 /* VARIABLES DE COLOR */
@@ -528,6 +537,7 @@ footer {
         width: 0;
         opacity: 0;
     }
+
     to {
         width: 180px;
         opacity: 1;
@@ -539,12 +549,21 @@ footer {
     .pago__titulo--texto {
         font-size: 26px;
     }
+
     .pago__titulo--subrayado {
         animation: expandUnderlineTablet 0.8s ease-out forwards;
     }
+
     @keyframes expandUnderlineTablet {
-        from { width: 0; opacity: 0; }
-        to { width: 140px; opacity: 1; }
+        from {
+            width: 0;
+            opacity: 0;
+        }
+
+        to {
+            width: 140px;
+            opacity: 1;
+        }
     }
 }
 
@@ -552,12 +571,20 @@ footer {
     .pago__titulo--texto {
         font-size: 22px;
     }
+
     .pago__titulo--subrayado {
         animation: expandUnderlineMobile 0.8s ease-out forwards;
     }
+
     @keyframes expandUnderlineMobile {
-        from { width: 0; opacity: 0; }
-        to { width: 100px; opacity: 1; }
+        from {
+            width: 0;
+            opacity: 0;
+        }
+
+        to {
+            width: 100px;
+            opacity: 1;
+        }
     }
 }
-
