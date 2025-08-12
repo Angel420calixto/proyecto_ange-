@@ -5,6 +5,17 @@
     --rosa-pastel: #f5b7b1;
 }
 
+/* Oculta las imágenes después de la cuarta */
+.galeria-grid .galeria-item.oculto {
+    display: none;
+}
+
+h1 {
+    margin-left: 60px;
+    font-size: 1.5rem;
+    color: #000;
+}
+
 .nav__links {
     transition: right 0.4s ease;
 }

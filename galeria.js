@@ -84,4 +84,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+//manejo de cargar mas imagenes en las secciones//
+
+document.querySelectorAll(".btn-vermas").forEach(boton => {
+    boton.addEventListener("click", function () {
+        const galeria = this.nextElementSibling; // La galería que está después del botón
+        const ocultas = galeria.querySelectorAll(".oculto");
+
+        ocultas.forEach(item => {
+            item.style.display = "block"; // Muestra las ocultas
+        });
+
+        this.style.display = "none"; // Oculta el botón
+    });
+});
 

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Waffles vistor</title>
     <h1>Bienvenido a Waffles</h1>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="galeria.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -19,16 +19,14 @@
 <body>
 <header>
   <nav class="nav">
-    <div class="nav__logo">
-        <img class="encabezado__logo--icono" src="img/logopatagonia.jpg" alt="">
-    </div>
+    <div class="nav__logo">Mi Logo</div>
 
     <button class="nav__toggle" id="menu-toggle" aria-label="Menú">
       ☰
     </button>
 
     <ul class="nav__links" id="nav-menu">
-      <li><a href="#">Galería</a></li>
+      <li><a href="galeria.html">Galería</a></li>
       <li><a href="#">Waffles</a></li>
       <li><a href="#">Tortas</a></li>
       <li><a href="#">Coctelería</a></li>
@@ -41,95 +39,71 @@
   <div class="hero-content">
     <h1>Bienvenid@ a Patagonia Dulce</h1>
     <p>Sabores que despiertan sonrisas</p>
-    <a href="galeria.html" class="btn-hero">Explorar Productos</a>
   </div>
 </section>
-
-     <main class="container">
-    <div class="pago__titulo">
-        <div class="pago__titulo--texto">Bienvenido a Nuestro Catalogo</div>
-        <div class="pago__titulo--subrayado"></div>
+<main class="galeria">
+    <!-- Encabezado fijo -->
+    <div class="galeria-header">
+        <h2>Nuestros productos</h2>
+        <button id="verMasBtn" class="btn-vermas">Ver más</button>
     </div>
-    
-    <div class="busca__header">
-                <a href="inicialv.html" class="categoria__vermas">Presione aqui para Continuar</a>
-            </div>
 
-        <div class="busca">
-            <section id="bonbanners-moca" class="revealOnScroll mb-5" data-animation="fadeInUp">
-                <ul class="banner-list-moca">
-                    <li class="banner-item-moca" style="background-image: url('')">
-                        <a href="">
-                            <img class="img-responsive d-none d-md-block" src="img/kuchensureño.webp" alt="Tortas Heladas">
-                            <div class="banner-inner">
-                                <h3 style="font-weight:600;color:#444c53;text-align:left;">Tortas Heladas</h3>
-                                <p style="text-align:left;"><span class="btn_link"
-                                        style="color:#444c53;text-align:left;font-weight:600;">Ver más
-                                        &gt;</span></p>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="banner-item-moca" style="background-image: url('')">
-                        <a href="">
-                            <img class="img-responsive d-none d-md-block" src="img/moussedeplatanopostre.webp"
-                                alt="Coctelería">
-                            <div class="banner-inner">
-                                <h4 style="font-weight:600;color:#444c53;">Coctelería</h4>
-                                <p><span class="btn__link" style="color:#444c53;text-align:left;font-weight:600;">Ver más
-                                        &gt;</span></p>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="banner-item-moca" style="background-image: url('')">
-                        <a href="10-tortas">
-                            <img class="img-responsive d-none d-md-block"
-                                src="img/nuevapatagonia.webp" alt="Tortas">
-                            <div class="banner-inner">
-                                <h3 style="font-weight:600;color:#444c53;text-align:left;">Tortas</h3>>
-                                <p style="text-align:left;"><span class="btn__link"
-                                        style="color:#444c53;text-align:left;font-weight:600;">Ver más
-                                        &gt;</span></p>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="banner-item-moca" style="background-image: url('')">
-                        <a href="">
-                            <img class="img-responsive d-none d-md-block" src="img/bocadobuffet.jpg" alt="Foto torta">
-                            <div class="banner-inner">
-                                <h3 style="font-weight:600;color:#444c53;text-align:left;">Foto torta</h3>
-                                <p style="text-align:left;"><span class="btn__link"
-                                        style="color:#444c53;text-align:left;font-weight:600;">Ver más
-                                        &gt;</span></p>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="banner-item-moca" style="background-image: url('')">
-                        <a href="">
-                            <img class="img-responsive d-none d-md-block" src="img/bocadosalado1.jpg"
-                                alt="Decoraciones Mujer">
-                            <div class="banner-inner">
-                                <h4 style="font-weight:600;color:#444c53;">¡Celebra con estilo!</h4>
-                                <p style="font-weight:400;"><span class="btn__link"
-                                        style="color:#444c53;text-align:left;font-weight:600;">Ver más
-                                        &gt;</span></p>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="banner-item-moca" style="background-image: url('')">
-                        <a href="">
-                            <img class="img-responsive d-none d-md-block" src="img/bocadoybuffet.avif"
-                                alt="Tortas de Matrimonio">
-                            <div class="banner-inner">
-                                <h3 style="font-weight:600;color:#444c53;">Tortas de Matrimonio</h3>
-                                <p style="font-weight:400;"><span class="btn_link"
-                                        style="color:#444c53;text-align:left;font-weight:600;">Ver más
-                                        &gt;</span></p>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </section>
+    <!-- Zona de imágenes scrollable -->
+    <div class="galeria-grid">
+        <div class="galeria-item"><img src="img/wafle1.jpg" alt="Producto 1"></div>
+        <div class="galeria-item"><img src="img/wafle2.avif" alt="Producto 2"></div>
+        <div class="galeria-item"><img src="img/wafle3.jpg" alt="Producto 3"></div>
+        <div class="galeria-item"><img src="img/wafle4.avif" alt="Producto 4"></div>
+        <div class="galeria-item"><img src="img/wafle5.webp" alt="Producto 5"></div>
+        <div class="galeria-item"><img src="img/wafle6.jpg" alt="Producto 6"></div>
+        <div class="galeria-item"><img src="img/wafle7.jpg" alt="Producto 7"></div>
+        <div class="galeria-item"><img src="img/wafle8.jpg" alt="Producto 8"></div>
+        <div class="galeria-item"><img src="img/wafle9.jpg" alt="Producto 9"></div>
+        <div class="galeria-item"><img src="img/wafle10.jpg" alt="Producto 9"></div>
+        <div class="galeria-item"><img src="img/wafle11.jpg" alt="Producto 9"></div>
+        <div class="galeria-item"><img src="img/wafle12.jpg" alt="Producto 9"></div>
+        <!-- Más imágenes si quieres -->
+    </div>
+     <div class="galeria-header">
+        <h2>Nuestros productos</h2>
+        <button id="verMasBtn" class="btn-vermas">Ver más</button>
+    </div>
+    <div class="galeria-grid">
+        <div class="galeria-item"><img src="img/wafle1.jpg" alt="Producto 1"></div>
+        <div class="galeria-item"><img src="img/wafle2.avif" alt="Producto 2"></div>
+        <div class="galeria-item"><img src="img/wafle3.jpg" alt="Producto 3"></div>
+        <div class="galeria-item"><img src="img/wafle4.avif" alt="Producto 4"></div>
+        <div class="galeria-item"><img src="img/wafle5.webp" alt="Producto 5"></div>
+        <div class="galeria-item"><img src="img/wafle6.jpg" alt="Producto 6"></div>
+        <div class="galeria-item"><img src="img/wafle7.jpg" alt="Producto 7"></div>
+        <div class="galeria-item"><img src="img/wafle8.jpg" alt="Producto 8"></div>
+        <div class="galeria-item"><img src="img/wafle9.jpg" alt="Producto 9"></div>
+        <div class="galeria-item"><img src="img/wafle10.jpg" alt="Producto 9"></div>
+        <div class="galeria-item"><img src="img/wafle11.jpg" alt="Producto 9"></div>
+        <div class="galeria-item"><img src="img/wafle12.jpg" alt="Producto 9"></div>
+        <!-- Más imágenes si quieres -->
+    </div>
+     <div class="galeria-header">
+        <h2>Nuestros productos</h2>
+        <button id="verMasBtn" class="btn-vermas">Ver más</button>
+    </div>
+    <div class="galeria-grid">
+        <div class="galeria-item"><img src="img/wafle1.jpg" alt="Producto 1"></div>
+        <div class="galeria-item"><img src="img/wafle2.avif" alt="Producto 2"></div>
+        <div class="galeria-item"><img src="img/wafle3.jpg" alt="Producto 3"></div>
+        <div class="galeria-item"><img src="img/wafle4.avif" alt="Producto 4"></div>
+        <div class="galeria-item"><img src="img/wafle5.webp" alt="Producto 5"></div>
+        <div class="galeria-item"><img src="img/wafle6.jpg" alt="Producto 6"></div>
+        <div class="galeria-item"><img src="img/wafle7.jpg" alt="Producto 7"></div>
+        <div class="galeria-item"><img src="img/wafle8.jpg" alt="Producto 8"></div>
+        <div class="galeria-item"><img src="img/wafle9.jpg" alt="Producto 9"></div>
+        <div class="galeria-item"><img src="img/wafle10.jpg" alt="Producto 9"></div>
+        <div class="galeria-item"><img src="img/wafle11.jpg" alt="Producto 9"></div>
+        <div class="galeria-item"><img src="img/wafle12.jpg" alt="Producto 9"></div>
+        <!-- Más imágenes si quieres -->
+    </div>
 </main>
+
 <footer class="text-center">
         <p class="letras">Derechos reservados Patagonia Dulce Pasteleria | 2024 | San Clemente, Chile.</p>
         <!-- Enlaces de redes sociales -->
@@ -161,6 +135,6 @@
                 d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
         </svg>
     </a>
-  <script src="index.js"></script>
+  <script src="galeria.js"></script>
 </body>
 </html>

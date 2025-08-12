@@ -30,6 +30,12 @@
     "detect-css-reflows/composite": "off",
     "detect-css-reflows/layout": "off",
     "disown-opener": "off",
-    "detect-css-reflows/paint": "off"
+    "detect-css-reflows/paint": "off",
+    "axe/parsing": [
+      "default",
+      {
+        "duplicate-id-active": "off"
+      }
+    ]
   }
 }
