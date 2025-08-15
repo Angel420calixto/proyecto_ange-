@@ -13,3 +13,12 @@ document.querySelectorAll('#nav-menu a').forEach(link =>
     })
 );
 
+document.querySelectorAll('.btn-vermas').forEach(boton => {
+    boton.addEventListener('click', () => {
+        const galeria = boton.parentElement.nextElementSibling;
+        galeria.querySelectorAll('.oculto').forEach(item => {
+            item.classList.remove('oculto');
+        });
+        boton.style.display = 'none';
+    });
+});

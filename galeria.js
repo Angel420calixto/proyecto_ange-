@@ -99,3 +99,21 @@ document.querySelectorAll(".btn-vermas").forEach(boton => {
     });
 });
 
+document.querySelectorAll('.btn-vermas').forEach(boton => {
+    boton.addEventListener('click', () => {
+        const galeria = boton.closest('.galeria-header').nextElementSibling;
+        const ocultas = galeria.querySelectorAll('.oculto');
+
+        if (boton.dataset.abierto === "true") {
+            // Ocultar de nuevo
+            ocultas.forEach(item => item.style.display = 'none');
+            boton.textContent = 'Ver más';
+            boton.dataset.abierto = "false";
+        } else {
+            // Mostrar todo
+            ocultas.forEach(item => item.style.display = 'flex');
+            boton.textContent = 'Ver menos';
+            boton.dataset.abierto = "true";
+        }
+    });
+});

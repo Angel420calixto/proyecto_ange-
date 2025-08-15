@@ -6,6 +6,7 @@
     <title>Waffles vistor</title>
     <h1>Bienvenido a Waffles</h1>
     <link rel="stylesheet" href="galeria.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -25,14 +26,13 @@
       ☰
     </button>
 
-    <ul class="nav__links" id="nav-menu">
-      <li><a href="index.html">Inicio</a></li>
+     <ul class="nav__links" id="nav-menu">
       <li><a href="galeria.html">Galería</a></li>
-      <li><a href="#">Waffles</a></li>
+      <li><a href="waffles.html">Waffles</a></li>
       <li><a href="tortas.html">Tortas</a></li>
-      <li><a href="#">Coctelería</a></li>
-      <li><a href="#">Acerca de Nosotros</a></li>
-      <li><a href="#">Contacto</a></li>
+      <li><a href="Cocteleria.html">Coctelería</a></li>
+      <li><a href="acercaDeNosotros.html">Acerca de Nosotros</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
     </ul>
   </nav>
 </header>
@@ -44,65 +44,94 @@
 </section>
 <main class="galeria">
     <!-- Encabezado fijo -->
-    <div class="galeria-header">
-        <h2>Nuestros productos</h2>
-        <button id="verMasBtn" class="btn-vermas">Ver más</button>
-    </div>
+      <div class="galeria-header">
+    <h2>Nuestros productos</h2>
+    <button class="btn-vermas">Ver más</button>
+</div>
 
-    <!-- Zona de imágenes scrollable -->
-    <div class="galeria-grid">
-        <div class="galeria-item"><img src="img/wafle1.jpg" alt="Producto 1"></div>
-        <div class="galeria-item"><img src="img/wafle2.avif" alt="Producto 2"></div>
-        <div class="galeria-item"><img src="img/wafle3.jpg" alt="Producto 3"></div>
-        <div class="galeria-item"><img src="img/wafle4.avif" alt="Producto 4"></div>
-        <div class="galeria-item"><img src="img/wafle5.webp" alt="Producto 5"></div>
-        <div class="galeria-item"><img src="img/wafle6.jpg" alt="Producto 6"></div>
-        <div class="galeria-item"><img src="img/wafle7.jpg" alt="Producto 7"></div>
-        <div class="galeria-item"><img src="img/wafle8.jpg" alt="Producto 8"></div>
-        <div class="galeria-item"><img src="img/wafle9.jpg" alt="Producto 9"></div>
-        <div class="galeria-item"><img src="img/wafle10.jpg" alt="Producto 9"></div>
-        <div class="galeria-item"><img src="img/wafle11.jpg" alt="Producto 9"></div>
-        <div class="galeria-item"><img src="img/wafle12.jpg" alt="Producto 9"></div>
-        <!-- Más imágenes si quieres -->
-    </div>
-     <div class="galeria-header">
-        <h2>Nuestros productos</h2>
-        <button id="verMasBtn" class="btn-vermas">Ver más</button>
-    </div>
-    <div class="galeria-grid">
-        <div class="galeria-item"><img src="img/wafle1.jpg" alt="Producto 1"></div>
-        <div class="galeria-item"><img src="img/wafle2.avif" alt="Producto 2"></div>
-        <div class="galeria-item"><img src="img/wafle3.jpg" alt="Producto 3"></div>
-        <div class="galeria-item"><img src="img/wafle4.avif" alt="Producto 4"></div>
-        <div class="galeria-item"><img src="img/wafle5.webp" alt="Producto 5"></div>
-        <div class="galeria-item"><img src="img/wafle6.jpg" alt="Producto 6"></div>
-        <div class="galeria-item"><img src="img/wafle7.jpg" alt="Producto 7"></div>
-        <div class="galeria-item"><img src="img/wafle8.jpg" alt="Producto 8"></div>
-        <div class="galeria-item"><img src="img/wafle9.jpg" alt="Producto 9"></div>
-        <div class="galeria-item"><img src="img/wafle10.jpg" alt="Producto 9"></div>
-        <div class="galeria-item"><img src="img/wafle11.jpg" alt="Producto 9"></div>
-        <div class="galeria-item"><img src="img/wafle12.jpg" alt="Producto 9"></div>
-        <!-- Más imágenes si quieres -->
-    </div>
-     <div class="galeria-header">
-        <h2>Nuestros productos</h2>
-        <button id="verMasBtn" class="btn-vermas">Ver más</button>
-    </div>
-    <div class="galeria-grid">
-        <div class="galeria-item"><img src="img/wafle1.jpg" alt="Producto 1"></div>
-        <div class="galeria-item"><img src="img/wafle2.avif" alt="Producto 2"></div>
-        <div class="galeria-item"><img src="img/wafle3.jpg" alt="Producto 3"></div>
-        <div class="galeria-item"><img src="img/wafle4.avif" alt="Producto 4"></div>
-        <div class="galeria-item"><img src="img/wafle5.webp" alt="Producto 5"></div>
-        <div class="galeria-item"><img src="img/wafle6.jpg" alt="Producto 6"></div>
-        <div class="galeria-item"><img src="img/wafle7.jpg" alt="Producto 7"></div>
-        <div class="galeria-item"><img src="img/wafle8.jpg" alt="Producto 8"></div>
-        <div class="galeria-item"><img src="img/wafle9.jpg" alt="Producto 9"></div>
-        <div class="galeria-item"><img src="img/wafle10.jpg" alt="Producto 9"></div>
-        <div class="galeria-item"><img src="img/wafle11.jpg" alt="Producto 9"></div>
-        <div class="galeria-item"><img src="img/wafle12.jpg" alt="Producto 9"></div>
-        <!-- Más imágenes si quieres -->
-    </div>
+<!-- Zona de imágenes scrollable -->
+<div class="galeria-grid">
+    <div class="galeria-item"><img src="img/wafle1.jpg" alt="Producto 1"></div>
+    <div class="galeria-item"><img src="img/wafle2.avif" alt="Producto 2"></div>
+    <div class="galeria-item"><img src="img/wafle3.jpg" alt="Producto 3"></div>
+    <div class="galeria-item"><img src="img/wafle4.avif" alt="Producto 4"></div>
+
+    <!-- Ocultas al inicio -->
+    <div class="galeria-item oculto"><img src="img/wafle5.webp" alt="Producto 5"></div>
+    <div class="galeria-item oculto"><img src="img/wafle6.jpg" alt="Producto 6"></div>
+    <div class="galeria-item oculto"><img src="img/wafle7.jpg" alt="Producto 7"></div>
+    <div class="galeria-item oculto"><img src="img/wafle8.jpg" alt="Producto 8"></div>
+    <div class="galeria-item oculto"><img src="img/wafle9.jpg" alt="Producto 9"></div>
+    <div class="galeria-item oculto"><img src="img/wafle10.jpg" alt="Producto 10"></div>
+    <div class="galeria-item oculto"><img src="img/wafle11.jpg" alt="Producto 11"></div>
+    <div class="galeria-item oculto"><img src="img/wafle12.jpg" alt="Producto 12"></div>
+</div>
+<div class="galeria-header">
+    <h2>Nuestros productos</h2>
+    <button class="btn-vermas">Ver más</button>
+</div>
+
+<!-- Zona de imágenes scrollable -->
+<div class="galeria-grid">
+    <div class="galeria-item"><img src="img/wafle1.jpg" alt="Producto 1"></div>
+    <div class="galeria-item"><img src="img/wafle2.avif" alt="Producto 2"></div>
+    <div class="galeria-item"><img src="img/wafle3.jpg" alt="Producto 3"></div>
+    <div class="galeria-item"><img src="img/wafle4.avif" alt="Producto 4"></div>
+
+    <!-- Ocultas al inicio -->
+    <div class="galeria-item oculto"><img src="img/wafle5.webp" alt="Producto 5"></div>
+    <div class="galeria-item oculto"><img src="img/wafle6.jpg" alt="Producto 6"></div>
+    <div class="galeria-item oculto"><img src="img/wafle7.jpg" alt="Producto 7"></div>
+    <div class="galeria-item oculto"><img src="img/wafle8.jpg" alt="Producto 8"></div>
+    <div class="galeria-item oculto"><img src="img/wafle9.jpg" alt="Producto 9"></div>
+    <div class="galeria-item oculto"><img src="img/wafle10.jpg" alt="Producto 10"></div>
+    <div class="galeria-item oculto"><img src="img/wafle11.jpg" alt="Producto 11"></div>
+    <div class="galeria-item oculto"><img src="img/wafle12.jpg" alt="Producto 12"></div>
+</div>
+<div class="galeria-header">
+    <h2>Nuestros productos</h2>
+    <button class="btn-vermas">Ver más</button>
+</div>
+
+<!-- Zona de imágenes scrollable -->
+<div class="galeria-grid">
+    <div class="galeria-item"><img src="img/wafle1.jpg" alt="Producto 1"></div>
+    <div class="galeria-item"><img src="img/wafle2.avif" alt="Producto 2"></div>
+    <div class="galeria-item"><img src="img/wafle3.jpg" alt="Producto 3"></div>
+    <div class="galeria-item"><img src="img/wafle4.avif" alt="Producto 4"></div>
+
+    <!-- Ocultas al inicio -->
+    <div class="galeria-item oculto"><img src="img/wafle5.webp" alt="Producto 5"></div>
+    <div class="galeria-item oculto"><img src="img/wafle6.jpg" alt="Producto 6"></div>
+    <div class="galeria-item oculto"><img src="img/wafle7.jpg" alt="Producto 7"></div>
+    <div class="galeria-item oculto"><img src="img/wafle8.jpg" alt="Producto 8"></div>
+    <div class="galeria-item oculto"><img src="img/wafle9.jpg" alt="Producto 9"></div>
+    <div class="galeria-item oculto"><img src="img/wafle10.jpg" alt="Producto 10"></div>
+    <div class="galeria-item oculto"><img src="img/wafle11.jpg" alt="Producto 11"></div>
+    <div class="galeria-item oculto"><img src="img/wafle12.jpg" alt="Producto 12"></div>
+</div>
+<div class="galeria-header">
+    <h2>Nuestros productos</h2>
+    <button class="btn-vermas">Ver más</button>
+</div>
+
+<!-- Zona de imágenes scrollable -->
+<div class="galeria-grid">
+    <div class="galeria-item"><img src="img/wafle1.jpg" alt="Producto 1"></div>
+    <div class="galeria-item"><img src="img/wafle2.avif" alt="Producto 2"></div>
+    <div class="galeria-item"><img src="img/wafle3.jpg" alt="Producto 3"></div>
+    <div class="galeria-item"><img src="img/wafle4.avif" alt="Producto 4"></div>
+
+    <!-- Ocultas al inicio -->
+    <div class="galeria-item oculto"><img src="img/wafle5.webp" alt="Producto 5"></div>
+    <div class="galeria-item oculto"><img src="img/wafle6.jpg" alt="Producto 6"></div>
+    <div class="galeria-item oculto"><img src="img/wafle7.jpg" alt="Producto 7"></div>
+    <div class="galeria-item oculto"><img src="img/wafle8.jpg" alt="Producto 8"></div>
+    <div class="galeria-item oculto"><img src="img/wafle9.jpg" alt="Producto 9"></div>
+    <div class="galeria-item oculto"><img src="img/wafle10.jpg" alt="Producto 10"></div>
+    <div class="galeria-item oculto"><img src="img/wafle11.jpg" alt="Producto 11"></div>
+    <div class="galeria-item oculto"><img src="img/wafle12.jpg" alt="Producto 12"></div>
+</div>
 </main>
 
 <footer class="text-center">
