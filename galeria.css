@@ -353,7 +353,7 @@ main {
     margin: 0 auto;
     padding: 40px 20px;
     text-align: center;
-    background-color: #90424278;
+    background-color: #f6dcdcef;
     border-radius: 10px;
     z-index: 10;
 }
@@ -371,14 +371,14 @@ main {
 }
 
 .galeria-item {
-    background: white;
+    background: rgb(249, 203, 203);
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    aspect-ratio: 1 / 1;
     display: flex;
+    flex-direction: column; /* 👈 apila imagen y descripción */
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 /* Ocultar imágenes adicionales */
@@ -388,9 +388,31 @@ main {
 
 .galeria-item img {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 1 / 1;  /* 👈 mantiene el cuadrado */
     object-fit: cover;
     display: block;
+    border-bottom: 1px solid #eec3c3;
+}
+
+/* Descripción debajo de la imagen */
+.galeria-item .categoria__titulo-producto {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 8px 0 4px;
+    color: var(--marron-oscuro);
+}
+
+.galeria-item .categoria__descripcion {
+    font-size: 0.9rem;
+    color: #444;
+    margin-bottom: 4px;
+}
+
+.galeria-item .categoria__precio {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--marron-suave);
+    margin-bottom: 10px;
 }
 
 /* Botón "Ver más" */
@@ -410,7 +432,6 @@ main {
     background-color: var(--marron-oscuro);
     transform: scale(1.05);
 }
-
 
 /* Modal para imagen */
 .modal {
@@ -456,10 +477,199 @@ main {
     cursor: pointer;
 }
 
-/* Siempre 3 columnas, incluso en móvil */
+/* Responsivo */
 @media (max-width: 768px) {
     .galeria-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
+
+/* Contenedor general */
+#bonhtmlcontent .container ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* Ítems */
+#bonhtmlcontent li {
+    box-sizing: border-box;
+    padding: 20px;
+    flex: 0 0 33.33%; /* 3 columnas en desktop */
+    max-width: 33.33%;
+    text-align: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.9;
+}
+
+#bonhtmlcontent li:hover {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+/* Caja de cada ítem */
+.box-htmlcontent {
+    background-color: rgba(254, 250, 250, 0.85); /* un poco translúcido */
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(179, 168, 168, 0.1);
+    padding: 20px;
+    backdrop-filter: blur(6px); /* efecto cristal */
+}
+
+/* Imagenes más suaves */
+.icon-box img {
+    max-width: 80%;
+    height: auto;
+    opacity: 0.8; /* más amigable */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    filter: drop-shadow(0 4px 6px rgba(6, 4, 4, 0.15));
+}
+
+.icon-box img:hover {
+    opacity: 1;
+    transform: scale(1.08);
+}
+
+/* Títulos y textos */
+h3 {
+    font-size: 1.5rem;
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+h5 {
+    font-size: 1rem;
+    color: #666;
+    margin: 0;
+}
+
+/* Responsivo tablets */
+@media screen and (max-width: 992px) {
+    #bonhtmlcontent li {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+/* Responsivo móviles */
+@media screen and (max-width: 600px) {
+    #bonhtmlcontent li {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .icon-box img {
+        max-width: 60%;
+    }
+}
+
+/* Sección de servicios */
+.servicios {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #fafafa, #f4f0ed);
+}
+
+.servicios h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #3e2723; 
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Contenedor de tarjetas */
+.servicios-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 tarjetas en PC */
+    gap: 30px;
+}
+
+/* Cada tarjeta */
+.servicio {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.35s ease;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    max-width: 320px;
+    margin: 0 auto;
+    flex-shrink: 0; /* para scroll en mobile */
+}
+
+.servicio:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen */
+.servicio img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.4s ease;
+}
+
+.servicio:hover img {
+    transform: scale(1.05);
+}
+
+/* Título */
+.servicio h3 {
+    margin: 20px 0 10px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #8b4513;
+}
+
+/* Descripción */
+.servicio p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* --- Tablets: 2 tarjetas por fila --- */
+@media screen and (max-width: 992px) {
+    .servicios-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* --- Móvil: 1 tarjeta por vez con scroll horizontal --- */
+@media screen and (max-width: 768px) {
+    .servicios-container {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 20px;
+        padding-bottom: 15px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .servicio {
+        flex: 0 0 80%;
+        scroll-snap-align: start;
+    }
+
+    .servicios-container::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+/* --- Móvil muy pequeño: tarjeta completa --- */
+@media screen and (max-width: 480px) {
+    .servicio {
+        flex: 0 0 95%;
+    }
+}

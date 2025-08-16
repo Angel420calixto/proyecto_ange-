@@ -672,3 +672,47 @@ footer {
         }
     }
 }
+
+/*css de seccion de servicios*/
+.servicios {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.servicios-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.servicio {
+    width: 300px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.servicio:hover {
+    transform: translateY(-5px);
+}
+
+.servicio img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.servicio h3 {
+    margin: 15px 0 10px;
+    font-size: 1.5em;
+    color: #D2691E;
+    /* Color chocolate elegante */
+}
+
+.servicio p {
+    font-size: 1em;
+    color: #555;
+}
+
