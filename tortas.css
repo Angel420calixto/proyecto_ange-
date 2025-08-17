@@ -1,0 +1,79 @@
+/* ---------------- MAIN: MENU TORTA ---------------- */
+.menu-torta {
+    background: url("img/tortas/tortacat.avif") center/cover no-repeat;
+    padding: 3rem 1.5rem;
+    position: relative;
+    color: #fff;
+}
+
+.menu-torta::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.menu-torta .overlay {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.menu-torta h1 {
+    text-align: center;
+    font-family: "Prata", serif;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #fff;
+}
+
+/* ---------------- BLOQUES (PASOS) ---------------- */
+.paso-torta {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* SIEMPRE dos columnas (PC y mobile) */
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* Imagen */
+.paso-torta img {
+    width: 100%;
+    height: auto;          /* Mantiene proporción */
+    max-height: 300px;     /* Para que no se estire demasiado */
+    object-fit: contain;   /* Se ve completa sin deformarse */
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    display: block;
+}
+
+/* Texto */
+.paso-torta .texto-torta {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.paso-torta .texto-torta h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: #fdd9c1;
+    font-family: "Unbounded", sans-serif;
+}
+
+/* Intercalar izquierda/derecha */
+.paso-torta:nth-child(even) img {
+    order: 2;
+}
+
+.paso-torta:nth-child(even) .texto-torta {
+    order: 1;
+}
+
+/* ---------------- AJUSTES GENERALES ---------------- */
+img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Todas las imágenes se ven completas */
+    display: block;
+}
